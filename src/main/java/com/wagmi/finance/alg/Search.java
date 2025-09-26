@@ -14,7 +14,17 @@ public final class Search {
     }
 
     public static int binarySearchById(Transaction[] sortedById, String id) {
-        // stub for binary search
+        if(sortedById.length==0){
+            return -1;
+        }
+        int low=0;
+        int high=sortedById.length;
+        while(low<=high){
+            int m=(low+high)/2;
+            if(sortedById[m].equals(id)){return m;}
+            else if(sortedById[m]>id){high=m-1;}
+            else{low=m+1;}
+        }
         throw new UnsupportedOperationException("Not implemented");
     }
 }
