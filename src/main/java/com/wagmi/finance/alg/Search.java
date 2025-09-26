@@ -25,6 +25,7 @@ public final class Search {
             else if(sortedById[m]>id){high=m-1;}
             else{low=m+1;}
         }
+        return -1;
         throw new UnsupportedOperationException("Not implemented");
     }
 }
