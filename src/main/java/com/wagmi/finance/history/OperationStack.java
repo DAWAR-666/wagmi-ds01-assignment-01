@@ -17,17 +17,34 @@ public class OperationStack {
     }
 
     public void push(String operation) {
-        // stub
+        if (top==-1){
+            top=0;
+            data[top]=operation;
+        }
+        else if(top==data.length){return;}
+        else{top++;
+        data[top]=operation;}
         throw new UnsupportedOperationException("Not implemented");
     }
 
     public String pop() {
-        // stub
+        if(top==-1){
+            return null;
+        }
+        else {
+            String temp=data[top];
+            top--;
+            return temp;
+        }
         throw new UnsupportedOperationException("Not implemented");
     }
 
     public String peek() {
-        // stub
+        if(top==-1){
+            return null;
+        }
+        String temp=data[top];
+        return temp;
         throw new UnsupportedOperationException("Not implemented");
     }
 
