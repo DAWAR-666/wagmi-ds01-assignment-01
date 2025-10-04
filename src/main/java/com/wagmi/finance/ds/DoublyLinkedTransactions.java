@@ -45,7 +45,7 @@ public class DoublyLinkedTransactions {
         }
         size++;
 
-        throw new UnsupportedOperationException("Not implemented");
+       
     }
 
     public boolean deleteById(String id) {
@@ -84,7 +84,7 @@ public class DoublyLinkedTransactions {
             current = current.next;
         }
         return false;
-        throw new UnsupportedOperationException("Not implemented");
+    
     }
 
     public Transaction findById(String id) {
@@ -103,7 +103,7 @@ public class DoublyLinkedTransactions {
         }
         return null;
 
-        throw new UnsupportedOperationException("Not implemented");
+        
     }
 
     public void reverse() {
@@ -127,7 +127,7 @@ public class DoublyLinkedTransactions {
         temp = head;
         head = tail;
         tail = temp;
-        throw new UnsupportedOperationException("Not implemented");
+        
     }
 
     public int size() {
@@ -147,6 +147,6 @@ public class DoublyLinkedTransactions {
             i++;
         }
         return arr;
-        throw new UnsupportedOperationException("Not implemented");
+        
     }
 }

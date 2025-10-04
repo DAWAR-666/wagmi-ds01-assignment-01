@@ -14,18 +14,29 @@ public final class Search {
     }
 
     public static int binarySearchById(Transaction[] sortedById, String id) {
-        if(sortedById.length==0){
-            return -1;
-        }
-        int low=0;
-        int high=sortedById.length;
-        while(low<=high){
-            int m=(low+high)/2;
-            if(sortedById[m].equals(id)){return m;}
-            else if(sortedById[m]>id){high=m-1;}
-            else{low=m+1;}
-        }
-        return -1;
+        // if (sortedById == null){
+        //     throw new NullPointerException("The given array is null");
+        // }
+        // if(id == null){
+        //     return -1;
+        // }
+
+        // int low = 0;
+        // int high = sortedById.length - 1;
+        // while (low <= high) {
+        //     int mid = (low + high) / 2;
+        //     String ID = sortedById[mid].getId();
+
+        //     int cmp = ID.compareTo(id);
+        //     if (cmp == 0)
+        //         return mid;
+        //     else if (cmp < 0)
+        //         low = mid + 1;
+        //     else
+        //         high = mid - 1;
+        // }
+        // return -1 ;
         throw new UnsupportedOperationException("Not implemented");
+
     }
 }

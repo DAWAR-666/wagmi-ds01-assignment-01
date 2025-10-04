@@ -24,7 +24,7 @@ public class OperationStack {
         else if(top==data.length){return;}
         else{top++;
         data[top]=operation;}
-        throw new UnsupportedOperationException("Not implemented");
+        
     }
 
     public String pop() {
@@ -36,7 +36,7 @@ public class OperationStack {
             top--;
             return temp;
         }
-        throw new UnsupportedOperationException("Not implemented");
+       
     }
 
     public String peek() {
@@ -45,7 +45,7 @@ public class OperationStack {
         }
         String temp=data[top];
         return temp;
-        throw new UnsupportedOperationException("Not implemented");
+        
     }
 
     public boolean isEmpty() {
