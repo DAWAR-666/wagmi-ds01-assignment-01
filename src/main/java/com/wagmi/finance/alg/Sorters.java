@@ -35,7 +35,18 @@ public final class Sorters {
 
     public static void insertionSortByCategory(Transaction[] arr, Comparator<String> categoryComparator) {
         // stub for insertion sort by category string
-        throw new UnsupportedOperationException("Not implemented");
+        if (arr == null || arr.length < 2) return;
+        int n=arr.length;
+        for(int j=1;j<n;j++){
+            Transaction k=arr[j];
+            int i=j-1;
+            while(i>=0 && (categoryComparator.compare(arr[i].getCategory(), k.getCategory())>0)){
+                arr[i+1]=arr[i];
+                i=i-1;
+            }
+            arr[i+1]=k;
+        }
+
     }
     public static void quicksort(Transaction[] arr,int low,int high){
         if(low<high){

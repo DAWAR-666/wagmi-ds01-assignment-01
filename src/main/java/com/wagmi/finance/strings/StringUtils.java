@@ -19,6 +19,19 @@ public final class StringUtils {
 
     public static boolean matchesDatePattern(String input) {
         // stub: check pattern YYYY-MM-DD
-        throw new UnsupportedOperationException("Not implemented");
+        if(input==null||input.length()!=10){return false;}
+        if(input.charAt(4)!='-' || input.charAt(7)!='-'){return false;}
+        int mm=Integer.parseInt(input.substring(5, 7));
+        if (mm>12||mm<=0) {return false;}
+        int yy=Integer.parseInt(input.substring(0, 4));
+        if(yy<=0){return false;}
+        int dd=Integer.parseInt(input.substring(8));
+        if(dd>=32 || dd<=0){return false;}
+        if(yy%4==0 && mm==2 && dd>29){return false;}
+        else if(yy%4!=0 && mm==2 && dd>28){return false;}
+        if(yy<7 && yy%2==0 && dd>=31){return false;}
+        if(yy>7 && yy%2!=0 && dd>=31){return false;}
+        return true;
+        
     }
 }
