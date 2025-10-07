@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: test.java.com.wagmi.finance.history.OperationStackTest
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.033 s <<< FAILURE! -- in test.java.com.wagmi.finance.history.OperationStackTest
+Tests run: 9, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.022 s <<< FAILURE! -- in test.java.com.wagmi.finance.history.OperationStackTest
 test.java.com.wagmi.finance.history.OperationStackTest.stack_zero_capacity -- Time elapsed: 0.001 s <<< ERROR!
 java.lang.UnsupportedOperationException: Stack capacity must be greater than zero.
 	at main.java.com.wagmi.finance.history.OperationStack.<init>(OperationStack.java:17)
