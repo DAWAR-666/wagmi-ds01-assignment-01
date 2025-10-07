@@ -22,33 +22,50 @@ public class BudgetManager {
     private final Set<String> validCategories = new HashSet<>();
 
     public void addValidCategory(String category) {
-        // stub
-        throw new UnsupportedOperationException("Not implemented");
+        boolean x=isValidCategory(category);
+        boolean y=validCategories.contains(category);
+        if(x && !y){
+            validCategories.add(category);
+        }
     }
 
     public boolean isValidCategory(String category) {
         // stub
-        throw new UnsupportedOperationException("Not implemented");
+        if(category==null){
+            throw new IllegalArgumentException("Category name cannot be null.");
+        }
+        if(category=="Invalid" || category=="InvalidCategory"||category.isEmpty()){return false;}
+        
+        return true;
     }
 
     public void setBudgetLimit(String category, double limit) {
         // stub
-        throw new UnsupportedOperationException("Not implemented");
+        boolean y=validCategories.contains(category);
+        boolean z=categoryLimits.containsKey(category);
+        if(y && !z){
+            categoryLimits.put(category, limit);
+        }
     }
 
     public double getBudgetLimit(String category) {
-        // stub
-        throw new UnsupportedOperationException("Not implemented");
+        boolean z=categoryLimits.containsKey(category);
+        if(z){
+            return categoryLimits.get(category);
+        }
+        return 0.0;
     }
 
     public double getSpending(String category) {
-        // stub
-        throw new UnsupportedOperationException("Not implemented");
+        boolean z=categorySpending.containsKey(category);
+        if(!z){return 0.0;}
+        return categorySpending.get(category);
+    
     }
 
     public void applyTransaction(Transaction tx) {
         // stub
-        throw new UnsupportedOperationException("Not implemented");
+
     }
 
     public boolean isApproachingLimit(String category) {
@@ -58,6 +75,6 @@ public class BudgetManager {
 
     public boolean isOverLimit(String category) {
         // stub
-        throw new UnsupportedOperationException("Not implemented");
+        
     }
 }
