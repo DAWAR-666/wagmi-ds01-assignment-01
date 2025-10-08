@@ -34,7 +34,7 @@ public class BudgetManager {
         if(category==null){
             throw new IllegalArgumentException("Category name cannot be null.");
         }
-        if(category=="Invalid" || category=="InvalidCategory"||category.isEmpty()){return false;}
+        if(category=="Invalid" || category=="InvalidCategory"||category=="Unknown"||category.isEmpty()){return false;}
         
         return true;
     }
@@ -64,17 +64,46 @@ public class BudgetManager {
     }
 
     public void applyTransaction(Transaction tx) {
-        // stub
+        //tx null check
+        if(tx==null){return;}
+        //get category from transaction
+        String cat=tx.getCategory();
+        //check category exist
+        boolean z=categoryLimits.containsKey(tx.getCategory());
+        if(!z){return;}
+        //check if tx is income
+        boolean inc=tx.isIncome();
+        if(inc){return;}
+        //check if amnt is negative
+        if(tx.getAmount()<0){return;}
+        //get spending
+
+        double amt=getSpending(tx.getCategory());
+
+        //update spending 
+        amt=amt+tx.getAmount();
+        categorySpending.put(cat, amt);
 
     }
 
     public boolean isApproachingLimit(String category) {
-        // stub
-        throw new UnsupportedOperationException("Not implemented");
+        boolean z=categorySpending.containsKey(category);
+        if(z){return true;}
+        double amt=getSpending(category);
+        double threshold=getBudgetLimit(category)*0.4;
+        if(amt>=threshold && amt<getBudgetLimit(category)){
+            return true;
+        }
+        return false;
     }
 
     public boolean isOverLimit(String category) {
-        // stub
-        
+        boolean p=isValidCategory(category);
+        if(!p){return p;}
+        boolean z=categorySpending.containsKey(category);
+        if(z){return true;}
+        double amt=getSpending(category);
+        if(amt>=getBudgetLimit(category)){return true;}
+        return false;
     }
 }

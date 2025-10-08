@@ -28,7 +28,6 @@ public final class RecursionUtils {
         if(mm<7 && mm%2==0 && dd>=31){return false;}
         if(mm>7 && mm%2!=0 && dd>=31){return false;}
         return true;
-
     }
 
     public static double categoryTotalRecursive(Transaction[] arr, String category) {
