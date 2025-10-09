@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: test.java.com.wagmi.finance.budget.BudgetManagerTest
 -------------------------------------------------------------------------------
-Tests run: 14, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.071 s <<< FAILURE! -- in test.java.com.wagmi.finance.budget.BudgetManagerTest
-test.java.com.wagmi.finance.budget.BudgetManagerTest.isValidCategory_with_null_category -- Time elapsed: 0.013 s <<< ERROR!
+Tests run: 14, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.066 s <<< FAILURE! -- in test.java.com.wagmi.finance.budget.BudgetManagerTest
+test.java.com.wagmi.finance.budget.BudgetManagerTest.isValidCategory_with_null_category -- Time elapsed: 0.017 s <<< ERROR!
 java.lang.IllegalArgumentException: Category name cannot be null.
 	at main.java.com.wagmi.finance.budget.BudgetManager.isValidCategory(BudgetManager.java:35)
 	at test.java.com.wagmi.finance.budget.BudgetManagerTest.isValidCategory_with_null_category(BudgetManagerTest.java:125)

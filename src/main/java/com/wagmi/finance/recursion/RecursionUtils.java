@@ -1,5 +1,8 @@
 package main.java.com.wagmi.finance.recursion;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /*
  TODO[Student]: Recursive utilities
  - `isValidDateRecursive`: parse YYYY-MM-DD without regex; handle ranges + leap years.
@@ -39,8 +42,9 @@ public final class RecursionUtils {
     }
 
     public static String generateBudgetReportRecursive(Transaction[] arr) {
-        // stub: build report string recursively
-        throw new UnsupportedOperationException("Not implemented");
+        // stub
+        if(arr==null||arr.length==0){return "empty array given";}
+        return report(arr,0).trim();
     }
     public static double total(Transaction[]arr,String category,int i){
         if(i>=arr.length){return 0.0;}
@@ -49,5 +53,11 @@ public final class RecursionUtils {
             cur_amt=arr[i].getAmount();
         }
         return cur_amt+total(arr,category,i+1);
+    }
+    public static String report(Transaction[] arr,int i){
+        if(i>=arr.length){return "";}
+        String repo="";
+        repo=repo+"  "+arr[i].getDate().toString()+" "+arr[i].getCategory()+Double.toString(arr[i].getAmount())+" ";
+        return repo+report(arr,i+1);
     }
 }
